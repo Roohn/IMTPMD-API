@@ -21,9 +21,4 @@ Route::get('/modules', function (Request $request) {
     return DB::table('modules')->get();
 });
 
-Route::get('/modules/year/{year}/semester/{semester}', function ($year, $semester) {
-    return DB::table('modules')->where([
-        ['year', '=', $year],
-        ['semester', '=', $semester],
-    ])->get();
-});
+Route::get('/modules/year/{year}/semester/{semester}', 'ApiController@getModules');

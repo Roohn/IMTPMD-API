@@ -427,6 +427,12 @@ class ModuleTableSeeder extends Seeder {
                 'ects' => 3,
                 'soort' => 'keuzevak',
             ],
+	    [
+		'id' => 'Minor',
+		'name' => 'Minor',
+		'ects' => '30',
+		'soort' => 'hoofdvak',
+	    ],
         ]);
         DB::table('dates')->insert([
             [
@@ -755,6 +761,15 @@ class ModuleTableSeeder extends Seeder {
                 'date_id' => 10,
                 'module_id' => "IWLS",
             ],
+	    [
+                'date_id' => 10,
+                'module_id' => "Minor",
+            ],
+            [
+                'date_id' => 12,
+                'module_id' => "Minor",
+            ],
+
             [
                 'date_id' => 14,
                 'module_id' => "IWLA",
