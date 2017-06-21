@@ -13,11 +13,10 @@ class CreateModulesTable extends Migration
      */
     public function up()
     {
-      Schema::create('modules', function (Blueprint $table) {
+      Schema::create('dates', function (Blueprint $table) {
           $table->string('id')->unique();
-          $table->string('name');
-          $table->integer('ects');
-          $table->string('soort');
+          $table->integer('year');
+          $table->integer('semester');
       });
     }
 
@@ -28,6 +27,6 @@ class CreateModulesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modules');
+        Schema::dropIfExists('dates');
     }
 }
