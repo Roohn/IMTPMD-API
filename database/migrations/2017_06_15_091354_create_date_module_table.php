@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+
 class CreateDateModuleTable extends Migration
 {
     /**
@@ -12,12 +13,10 @@ class CreateDateModuleTable extends Migration
     public function up()
     {
         Schema::create('date_module', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+	    $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('date_id')->unsigned();
-            $table->integer('module_id')->unsigned();
-            $table->rememberToken();
-            $table->timestamps();
+            $table->integer('date_id');
+            $table->string('module_id');
         });
         Schema::table('date_module', function(Blueprint $table)
         {

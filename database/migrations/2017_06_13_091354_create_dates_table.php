@@ -14,7 +14,7 @@ class CreateDatesTable extends Migration
     public function up()
     {
       Schema::create('dates', function (Blueprint $table) {
-          $table->string('id')->unique();
+          $table->integer('id')->unique();
           $table->integer('year');
           $table->integer('semester');
       });
