@@ -22,3 +22,4 @@ Route::get('/modules', function (Request $request) {
 });
 
 Route::get('/modules/year/{year}/semester/{semester}', 'ApiController@getModules');
+Route::post('/insertGrade', 'ApiController@insertGrade');
