@@ -12,14 +12,14 @@ class ApiController extends Controller
     public function getModules($year, $semester) {
 	$specialcode = $year * 4 - 4 + $semester;
 
-	$modules = Date::find($specialcode)->modules()->get();
+	$modules = Date::with('modules')->where('id', '=', $specialcode)->get();
 	return $modules;
     }
 
-    public function insertGrade() {
-      $moduleID = Input::get('id');
+    public function insertGrade(Request $data) {
+      $moduleID = $data->id;
       $module = Module::find($moduleID);
-      $module->grade = Input::get('grade');
+      $module->cijfer = $data->cijfer;
       $module->save();
     }
 
