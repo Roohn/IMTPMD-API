@@ -17,6 +17,8 @@ class CreateDatesTable extends Migration
           $table->integer('id')->unique();
           $table->integer('year');
           $table->integer('semester');
+          $table->rememberToken();
+          $table->timestamps();
       });
     }
 

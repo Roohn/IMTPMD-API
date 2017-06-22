@@ -17,6 +17,8 @@ class CreateDateModuleTable extends Migration
             $table->increments('id');
             $table->integer('date_id');
             $table->string('module_id');
+            $table->rememberToken();
+            $table->timestamps();
         });
         Schema::table('date_module', function(Blueprint $table)
         {

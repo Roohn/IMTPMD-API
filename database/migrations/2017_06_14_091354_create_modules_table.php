@@ -19,6 +19,8 @@ class CreateModulesTable extends Migration
           $table->integer('ects');
           $table->string('soort');
           $table->double('cijfer')->nullable();
+          $table->rememberToken();
+          $table->timestamps();
       });
     }
 
